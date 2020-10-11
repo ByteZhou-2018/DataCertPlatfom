@@ -1,6 +1,8 @@
 package db_mysql
 
 import (
+	"DataCertPlatfom/Hash"
+	"DataCertPlatfom/models"
 	"database/sql"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -39,17 +41,17 @@ func OpenDB()  {
 	//			root:123456@tcp(127.0.0.1:3306)/weather?charset=utf8
 	//fmt.Println(db_admin_name+":"+db_admin_pwd+"@tcp("+db_port+")/"+db_name+"?charset=utf8")
 }
-//func Inseret(u models.User)(int64,error){
-//	u.Nick = Hash.HASH(u.Nick,"md5",false)
-//
-//	result, err := Db.Exec("insert into test1(name ,birthday,address,nick)"+
-//		"values(?,?,?,?)",u.Name,u.Birtday,u.Address,u.Nick)
-//	if err != nil {
-//		return -1,err
-//	}
-//	rows,err := result.RowsAffected()
-//	if err != nil {
-//		return -1,err
-//	}
-//	return rows,nil
-//}
+func Inseret(u models.User)(int64,error){
+	u.Password = Hash.HASH(u.Password,"md5",false)
+
+	result, err := Db.Exec("insert into user_info(phone,password,)"+
+		"values(?,?)",u.Phone,u.Password,)
+	if err != nil {
+		return -1,err
+	}
+	rows,err := result.RowsAffected()
+	if err != nil {
+		return -1,err
+	}
+	return rows,nil
+}
