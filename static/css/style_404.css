@@ -15,7 +15,7 @@ body{
 	transform: translate(-50%,-50%);
 	text-align: center;
 	color: #343434;
-	}
+}
 .container h1{
 	font-size: 160px;
 	margin: 0;
@@ -29,11 +29,11 @@ body{
                 -ms-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
                 color: transparent;
                 /*设置字体颜色透明*/
-                /*-webkit-background-clip: text;*/
-                /*背景裁剪为文本形式*/
-                animation: ran 10s linear infinite;
-                /*动态10s展示*/
-	
+	/*-webkit-background-clip: text;*/
+	/*背景裁剪为文本形式*/
+	animation: ran 10s linear infinite;
+	/*动态10s展示*/
+
 }
 .container a{
 	text-decoration: none;

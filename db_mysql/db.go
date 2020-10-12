@@ -43,9 +43,10 @@ func OpenDB()  {
 }
 func Inseret(u models.User)(int64,error){
 	u.Password = Hash.HASH(u.Password,"md5",false)
-
-	result, err := Db.Exec("insert into user_info(phone,password,)"+
-		"values(?,?)",u.Phone,u.Password,)
+	result,err := Db.Exec("insert into user_info(username,sex,phone,password,email)" +
+		"value (?,?,?,?,?)",u.Name,u.Sex,u.Phone,u.Password,u.Email)
+	//result, err := Db.Exec("insert into user_info(phone,password,)"+
+	//	"values(?,?)",u.Phone,u.Password,)
 	if err != nil {
 		return -1,err
 	}
@@ -54,4 +55,21 @@ func Inseret(u models.User)(int64,error){
 		return -1,err
 	}
 	return rows,nil
+}
+func Query_user_info(username,pwd string) (bool) {
+	//查询数据
+	rows := Db.QueryRow("select username,password from user_info where username = ? and password = ?",
+		username,pwd)
+
+	var user_db models.User
+
+	err := rows.Scan(&user_db.Name,&user_db.Password)
+	if err != nil {
+		fmt.Println("rows.Sacn err :",err.Error())
+	}
+	//fmt.Println(user_db)
+	if username ==user_db.Name && pwd == user_db.Password {
+		return true
+	}
+	return false
 }

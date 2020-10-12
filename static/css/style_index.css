@@ -69,7 +69,7 @@ h1 {
 	color: #D1AB93;
 }
 
-.bigBox input[type="button"],
+.bigBox input[type= "reset"],
 .bigBox input[type="submit"] {
 	width: 30%;
 	padding: 3px 15px;
@@ -82,7 +82,8 @@ h1 {
 	background-blend-mode: multiply, multiply;
 }
 
-.bigBox input[type="button"]:hover,
+.bigBox input[type="reset"]:hover,
+/*.bigBox button:hover,*/
 .bigBox input[type="submit"]:hover {
 	color: #D1AB93;
 	/*box-shadow: 5px 5px 5px #D1AB93;*/
