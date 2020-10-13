@@ -3,16 +3,17 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<title>区块链信息安全平台-账号注册</title>
+		<title>电子数据认证平台-账号注册</title>
+		<link rel="icon" type="image/x-ico" href="../static/img/logoTitle.png"/>
 		<link rel="stylesheet" type="text/css" href="../static/css/style_sign_in.css" />
 	</head>
 
 	<body>
 		
 		<div id="formBox">
-			<h2>平台用户注册</h2>
+			<h2>区块链数据安全平台用户注册</h2>
 
-			<form action="http://127.0.0.1:8080/sign" method="post" class="sign_in_from">
+			<form action="/sign_in" method="post" class="sign_in_from">
 
 				<input type="text" name="username" id="username" placeholder="用户名" />
 				<p>性别 ：
@@ -30,6 +31,9 @@
 				
 				<input type="reset"  id="reset" class="from_btn"value="清空" />
 				<input type="submit" id="submit" class="from_btn"value="注册" />
+				<br>
+				<br>
+				<a href="index.html" style="color:#fe6d32 ">已有账号? 点此登录</a>
 			</form>
 		</div>
 	</body>

@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>错误页面</title>
+		<title>页面错误</title>
+		<link rel="icon" type="image/x-ico" href="../static/img/logoTitle.png"/>
 		<style type="text/css">
 			body{
 				padding: 0;
@@ -63,9 +64,9 @@
 		<div class="container">
 			<h2>Oops ! Page not found.</h2>
 			<h1>404</h1>
-			{{.}}
+			{{.Error}}
 			<p> We can't find the page you're looking for.</p>
-			<a href="http://127.0.0.1:6699/index">Go back home</a>
+			<a href="/index.html">Go back home</a>
 		</div>
 	</body>
 </html>
