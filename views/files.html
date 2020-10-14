@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传功能</title>
+    <link rel="icon" type="image/x-ico" href="../static/img/logoTitle.png"/>
+    <script src="../static/js/fairyDustCursor.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        *{padding: 0;margin: 0;}
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: "microsoft sans serif",sans-serif;
+            min-height: 100vh;
+            background-image:url("../static/img/img5.jpg");
+            background-size: cover;
+            overflow: hidden;
+            text-align: center;
+
+        }
+        #formBox{
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,.7);
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            outline: none;
+            border-radius: 10px;
+            /*box-shadow: 10px 10px 5px #A1979B;*/
+            box-sizing: border-box;
+        }
+        input[type ="file"]{
+            width: 200px;
+            margin: 100px auto 50px;
+            background: url("../static/img/img5.jpg") no-repeat ;
+            background-size: cover;
+
+        }
+        input[type ="submit"]{
+            width: 50px;
+            height: 30px;
+            background: url("../static/img/img5.jpg") no-repeat ;
+            background-size: cover;
+
+        }
+    </style>
+
+</head>
+<body>r
+        <div id="formBox"><form action="/files" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" multiple="multiple">
+                <br>
+                <br>
+
+                <input type="submit" value="提交">
+            </form></div>
+
+</body>
+</html>

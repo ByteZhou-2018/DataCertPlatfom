@@ -39,4 +39,6 @@ func OpenDB()  {
 	//			root:123456@tcp(127.0.0.1:3306)/weather?charset=utf8
 	//fmt.Println(db_admin_name+":"+db_admin_pwd+"@tcp("+db_port+")/"+db_name+"?charset=utf8")
 }
-
+func AddFiles()  {
+	
+}

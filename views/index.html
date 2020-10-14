@@ -5,23 +5,28 @@
     <meta charset="utf-8"/>
     <title>电子数据认证平台登录</title>
     <link rel="icon" type="image/x-ico" href="../static/img/logoTitle.png"/>
-    <link rel="icon" type="image/x-ico" href=""/>
     <link rel="stylesheet" type="text/css" href="../static/css/style_index.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/iconfont.css"/>
     <script src="../static/js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/fairyDustCursor.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        body{
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
 <div class="bigBox">
-    <form action="http://127.0.0.1:8080/index" method="post">
+    <form action="/index" method="post">
         <h2>LOGIN</h2>
         <div class="inputText">
             <span class="iconfont icon-iconfontuser"></span>
-            <input type="text" name="name" placeholder="Your Username"/>
+            <input type="text" name="username" placeholder="Your Username"/>
         </div>
         <div class="inputText">
             <span class="iconfont icon-iconfontsuo"></span>
-            <input type="password" name="pwd" id="pwd" placeholder="Your Password"/>
+            <input type="password" name="password1" id="pwd" placeholder="Your Password"/>
             <label for="pwd" class="iconfont icon-iconfonteye" onmouseover="changeText() "
                    onmouseout="changePassword()"></label>
         </div>

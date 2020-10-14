@@ -2,42 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b868d463-5f2e-4e26-a42f-50c5bed56f2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/home.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/sign_in.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logoTitle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/files.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/fairyDustCursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/files.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/index.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/register.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/sign.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/sign_in.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sign_in.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_mysql/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/db_mysql/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/HomeNew-f8f62.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/UserLoginForm-86fb5.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/UserRegistryForm-ef59c.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/WeChatImg-8lg-GUI.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/app-f03c3be68c19ce58d4ff.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/app-f03c3be68c19ce58d4ff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/common-f03c3be68c19ce58d4ff.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/common-f03c3be68c19ce58d4ff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/data-set.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/es6-shim-8e9077312e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/hm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/hm.js(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/hm.js(2)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/jquery-02053ebe83.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/pc_nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/poll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/push.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/baoquan/set-cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style_404.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style_404.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style_index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style_sign_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style_sign_in.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/sign_in.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,10 +62,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\img" />
+      <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\js" />
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\views" />
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\baoquan2" />
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\baoqaun" />
-      <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build DataCertPlatfom">
@@ -130,26 +109,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="73" key="#go_build_User.go/0.0.1536.824@0.0.1536.824" timestamp="1602561966898" />
-    <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1602562896778">
+    <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1602673019981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602562896778" />
-    <state width="1493" height="188" key="GridCell.Tab.0.bottom" timestamp="1602565045832">
+    <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602673019981" />
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1602689890011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602565045832" />
-    <state width="1493" height="188" key="GridCell.Tab.0.center" timestamp="1602565045832">
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602689890011" />
+    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1602689890011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602565045832" />
-    <state width="1493" height="188" key="GridCell.Tab.0.left" timestamp="1602565045832">
+    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602689890011" />
+    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1602689890011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602565045832" />
-    <state width="1493" height="188" key="GridCell.Tab.0.right" timestamp="1602565045832">
+    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602689890011" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1602689890011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602565045832" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602689890011" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1602480384436">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
