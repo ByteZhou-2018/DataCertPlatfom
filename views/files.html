@@ -21,7 +21,7 @@
         #formBox{
             width: 300px;
             height: 300px;
-            background: rgba(255,255,255,.7);
+            background: rgba(255,255,255,.3);
             color: #fff;
             position: absolute;
             top: 50%;
@@ -32,9 +32,20 @@
             /*box-shadow: 10px 10px 5px #A1979B;*/
             box-sizing: border-box;
         }
+
+        input[type ="text"]{
+            width: 150px;
+            padding: 5px;
+            margin: 30px auto 30px;
+            border: 1px solid #fff;
+            background: #59564D ;
+            color: #fff;
+            background-size: cover;
+
+        }
         input[type ="file"]{
             width: 200px;
-            margin: 100px auto 50px;
+            margin: 20px auto 50px;
             background: url("../static/img/img5.jpg") no-repeat ;
             background-size: cover;
 
@@ -44,15 +55,20 @@
             height: 30px;
             background: url("../static/img/img5.jpg") no-repeat ;
             background-size: cover;
-
+            color: #fff;
+            cursor: pointer;
         }
     </style>
 
 </head>
-<body>r
+<body>
+<div style="position: fixed;right: 30px;top: 20px; z-index: 999" >
+<span style="color: white;font-size: large;font-family: microsoft sans serif, sans-serif">欢迎您: {{.Username}}</span></div>
         <div id="formBox"><form action="/files" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" multiple="multiple">
+                 <input type="text" name="title" placeholder="您上传文件的标题">
+
                 <br>
+                <input type="file" name="file" multiple="multiple">
                 <br>
 
                 <input type="submit" value="提交">

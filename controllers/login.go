@@ -10,7 +10,8 @@ type LoginController struct {
 }
 
 func (l *LoginController) Get() {
-	l.TplName = "index.html"
+	l.Data["Username"] = "游客32098178765"
+	l.TplName = "login.html"
 }
 func (l *LoginController) Post() {
 
@@ -28,13 +29,13 @@ func (l *LoginController) Post() {
 		l.TplName = "404.html"
 		return
 	}
-	_, err = user.QueryUser()
+	u, err := user.QueryUser()
 	if err != nil {
 		l.Data["Error"] = err.Error()
 		l.TplName = "404.html"
 		return
 	}
-	//l.Data["Username"] = u.Name
+	l.Data["Username"] = u.Name
 	//l.TplName = "home.html"
 	l.TplName ="files.html"
 }

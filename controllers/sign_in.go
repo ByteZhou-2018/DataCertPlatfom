@@ -36,6 +36,6 @@ func (s *SignController) Post() {
 		s.TplName = "404.html"
 	}
 
-	s.TplName = "index.html"
+	s.TplName = "login.html"
 
 }

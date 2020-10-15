@@ -13,6 +13,6 @@ func (c *MainController) Get() {
 	//c.Data["Email"] = "astaxie@gmail.com"
 	//c.TplName = "register.html"
 	//fmt.Println("hello 8080")
-	c.TplName = "index.html"
+	c.TplName = "login.html"
 
 }
