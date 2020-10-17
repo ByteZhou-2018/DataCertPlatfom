@@ -66,7 +66,7 @@
 <span style="color: white;font-size: large;font-family: microsoft sans serif, sans-serif">欢迎您: {{.Username}}</span></div>
         <div id="formBox"><form action="/files" method="post" enctype="multipart/form-data">
                  <input type="text" name="title" placeholder="您上传文件的标题">
-
+                    <input type="hidden"name="phone"value="{{.Phone}}">
                 <br>
                 <input type="file" name="file" multiple="multiple">
                 <br>

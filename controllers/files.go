@@ -1,11 +1,15 @@
 package controllers
 
 import (
+	"DataCertPlatfom/models"
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
 	"github.com/astaxie/beego"
 	"io"
 	"os"
 	"strings"
+	"time"
 )
 
 type FilesController struct {
@@ -18,7 +22,26 @@ func (f *FilesController) Get() {
 }
 
 func (f *FilesController) Post() {
-	//文件的大小 200kb
+
+	title := f.Ctx.Request.PostFormValue("title")
+	phone := f.Ctx.Request.PostFormValue("phone")
+	fmt.Println(phone)
+	//username := f.Ctx.Request.PostFormValue("phone")
+ 	userId,err := models.QueryUserId(phone)
+ 	if err != nil{
+ 		f.Ctx.WriteString("认证失败,请稍后重试!")
+ 		fmt.Println(err.Error())
+		return
+	}
+	fmt.Println(title,phone)
+
+
+	files, err := f.GetFiles("file")
+	if err != nil {
+		f.Data["Error"] = err.Error()
+		f.TplName = "404.html"
+		return
+	}
 
 	config := beego.AppConfig
 	fileSize, err := config.Int64("file_size")
@@ -27,62 +50,91 @@ func (f *FilesController) Post() {
 		f.TplName = "404.html"
 		return
 	}
-	title := f.Ctx.Request.PostFormValue("title")
 
-	//file,header,err := f.GetFile("file")
-	files, err := f.GetFiles("file")
-	//files := f.Ctx.Request.MultipartForm.File["file"]
-	if err != nil {
-		f.Data["Error"] = err.Error()
-		f.TplName = "404.html"
-		return
+	hashInterface := md5.New()
+	//创建上传目录
+	dirName := "static/upload"
+	if _, err = os.Open(dirName);err!= nil{//先打开,没有则先创建
+		if err = os.Mkdir(dirName, os.ModePerm);err != nil {
+			f.Data["Error"] = err.Error()
+			f.TplName = "404.html"
+			return
+		}
 	}
 
 
+	//判断每个文件的类型和大小。。
 	for i := 0; i < len(files); i++ {
-		//判断每个文件的类型和大小。。。
 		isJpg := strings.HasSuffix(files[i].Filename, ".jpg")
 		isPng := strings.HasSuffix(files[i].Filename, ".png")
 		if !isJpg && !isPng {
-			//文件类型不支持
 			f.Ctx.WriteString("抱歉，文件类型不符合, 请上传符合格式的文件")
 			return
 		}
-
 		if files[i].Size/1024 > fileSize {
 			f.Ctx.WriteString("抱歉，文件大小超出范围，请上传符合要求的文件")
 			return
 		}
-		fmt.Println("文件的标题", title)
-		fmt.Println("文件的大小", files[i].Size)
-		fmt.Println("文件的名称", files[i].Filename)
-		savePath := "static/upload"+files[i].Filename
+
+		//
+		file, err := files[i].Open() //打开获取到的文件
+		defer  file.Close()
 
 
-
-		file, err := files[i].Open()//打开获取到的文件
-		saveFile,err :=  os.OpenFile(savePath,os.O_CREATE|os.O_RDWR,777)
+		savePath := "static/upload" + "/" + files[i].Filename
+		savefile, err := os.OpenFile(savePath, os.O_CREATE|os.O_RDWR, os.ModePerm)
 		if err != nil {
+			f.Ctx.WriteString("创建文件失败")
+			fmt.Println(err.Error())
+			return
+		}
+//		文件hash计算
+			defer hashInterface.Reset()
+
+		if _, err = io.Copy(savefile, file);err != nil {
 			f.Data["Error"] = err.Error()
 			f.TplName = "404.html"
 			return
 		}
-		//把文件的内容copy到我们保存的路径中  dsc ：数据复制的目的地  src：数据源
-		//							返回 int64 数据的长度 ， error
-		_,err = io.Copy(saveFile,file)//后面的file中的内容复制到前面的destfile中
-		if err != nil {
+
+		if _,err = io.Copy(hashInterface,savefile);err != nil{
 			f.Data["Error"] = err.Error()
 			f.TplName = "404.html"
+			fmt.Println(err.Error())
 			return
 		}
 
+		bytes := hashInterface.Sum(nil)
+		//fmt.Println(hex.EncodeToString(bytes))
+
+		thisFileInfo := models.UploadFile{
+			//Id:        0,
+			UserId:  userId  ,
+			FileName:  files[i].Filename,
+			FileSize:  files[i].Size,
+			FileCert: hex.EncodeToString(bytes) ,
+			FileTitle: title,
+			CertTime:  time.Now().String(),
+		}
+		_,err = thisFileInfo.AddFiles()
+		if err != nil{
+			fmt.Println(err.Error())
+			f.Ctx.WriteString("电子数据认证失败,请休息一会儿再试!")
+			return
+		}
 	}
-
+	records,err := models.QueryRecordsByUserId(userId)
+	if err != nil{
+		fmt.Println(err.Error())
+		f.Ctx.WriteString("认证信息获取失败,请稍后重试!")
+	}
+	f.Data["Filesinfo"] = records
+	f.TplName =" home.html"
 	f.Ctx.WriteString("恭喜！！！ 提交完成！")
 }
 
-
-
+//file,header,err := f.GetFile("file")
+//files := f.Ctx.Request.MultipartForm.File["file"]
 //创建上传目录
 //dirName := "static/upload"
 //_, err = os.Open(dirName)//先打开,失败则拆先创建
@@ -103,19 +155,6 @@ func (f *FilesController) Post() {
 //	f.TplName = "404.html"
 //}
 //defer destfile.Close()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //files, header, err := f.Ctx.Request.FormFile("file")
 //if err != nil {

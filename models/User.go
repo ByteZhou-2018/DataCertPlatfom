@@ -33,14 +33,23 @@ func (u User)AddUser()(int64,error){
 func (u User)QueryUser() (*User,error) {
 	u.Password = Hash.HASH(u.Password,"md5",false)
 	//查询数据
-	rows := db_mysql.Db.QueryRow("select username from user_info where username = ? and password = ?",
+	row := db_mysql.Db.QueryRow("select username,phone from user_info where username = ? and password = ?",
 		u.Name, u.Password)
 
-	err := rows.Scan(&u.Phone)
+	err := row.Scan(&u.Name,&u.Phone)
 	if err != nil {
 		fmt.Println("rows.Sacn err :",err.Error())
 		return nil,err
 
 	}
 	return  &u,nil
+}
+func QueryUserId(phone string)(int,error)  {
+	 row := db_mysql.Db.QueryRow("select id from user_info where  phone = ? ",phone)
+	 var userid int
+	 if err :=row.Scan(&userid);err!=nil{
+		 return -1,err
+
+	 }
+	 return  userid,nil
 }

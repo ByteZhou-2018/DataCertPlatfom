@@ -36,6 +36,7 @@ func (l *LoginController) Post() {
 		return
 	}
 	l.Data["Username"] = u.Name
+	l.Data["Phone"] = u.Phone
 	//l.TplName = "home.html"
 	l.TplName ="files.html"
 }

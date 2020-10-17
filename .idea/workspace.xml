@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b868d463-5f2e-4e26-a42f-50c5bed56f2c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/uplodFiles.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/default.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/default.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/files.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/sign_in.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sign_in.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/1G1m-hswimzx8639956.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/1c53-kakmcxe4579296.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/1f65-kakmcxe4853982.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/sign_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/static/upload1c53-kakmcxe4579296.jpg" />
+  </component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -103,31 +107,35 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="73" key="#go_build_User.go/0.0.1536.824@0.0.1536.824" timestamp="1602561966898" />
-    <state x="548" y="178" key="FileChooserDialogImpl" timestamp="1602723149794">
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1602918588360">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1602918588360" />
+    <state x="548" y="178" key="FileChooserDialogImpl" timestamp="1602919930044">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602690330243" />
-    <state x="548" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602723149794" />
-    <state width="1404" height="225" key="GridCell.Tab.0.bottom" timestamp="1602743521663">
+    <state x="548" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602919930044" />
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1602935073294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1404" height="225" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602743521663" />
-    <state width="1404" height="225" key="GridCell.Tab.0.center" timestamp="1602743521663">
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
+    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1602935073294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1404" height="225" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602743521663" />
-    <state width="1404" height="225" key="GridCell.Tab.0.left" timestamp="1602743521663">
+    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
+    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1602935073294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1404" height="225" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602743521663" />
-    <state width="1404" height="225" key="GridCell.Tab.0.right" timestamp="1602743521663">
+    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
+    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1602935073294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1404" height="225" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602743521663" />
+    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1602480384436">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -136,9 +144,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="457" y="44" width="621" height="735" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602694636177" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602467593986">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="431" y="152" width="672" height="711" key="search.everywhere.popup" timestamp="1602920305379">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602467593986" />
+    <state x="431" y="152" width="672" height="711" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1602920305379" />
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602919732688">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.864@0.0.1536.864" timestamp="1602919732688" />
   </component>
 </project>
