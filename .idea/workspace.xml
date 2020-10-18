@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b868d463-5f2e-4e26-a42f-50c5bed56f2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/uplodFiles.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/file.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hash/Hash.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/hash.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/files.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/08cd-iqyryku8123206.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/upload/1G1m-hswimzx8639956.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/1c53-kakmcxe4579296.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/upload/1f65-kakmcxe4853982.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/61add42aly8gdinx3nlcvj2050050dfx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/80-60.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +34,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -51,13 +52,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/static/upload1c53-kakmcxe4579296.jpg" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\img" />
       <recent name="E:\Code\Golang\GoProjects\src\DataCertPlatfom\static\js" />
@@ -67,6 +71,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build DataCertPlatfom">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="go build DataCertPlatfom" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="DataCertPlatfom" />
       <working_directory value="$PROJECT_DIR$" />
@@ -87,14 +102,28 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build DataCertPlatfom" />
-        <item itemvalue="Go Build.go build User.go" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1602940200521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602940200521</updated>
+      <workItem from="1602940202006" duration="120000" />
+    </task>
+    <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602940289507">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1602940289507" />
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602592787018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -111,35 +140,36 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1602918588360" />
-    <state x="548" y="178" key="FileChooserDialogImpl" timestamp="1602919930044">
+    <state x="548" y="178" key="FileChooserDialogImpl" timestamp="1603020604301">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602690330243" />
-    <state x="548" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602919930044" />
-    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1602935073294">
+    <state x="548" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603020604301" />
+    <state width="1493" height="248" key="GridCell.Tab.0.bottom" timestamp="1603026403541">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
-    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1602935073294">
+    <state width="1493" height="248" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1603026403541" />
+    <state width="1493" height="248" key="GridCell.Tab.0.center" timestamp="1603026403541">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
-    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1602935073294">
+    <state width="1493" height="248" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1603026403541" />
+    <state width="1493" height="248" key="GridCell.Tab.0.left" timestamp="1603026403540">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
-    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1602935073294">
+    <state width="1493" height="248" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1603026403540" />
+    <state width="1493" height="248" key="GridCell.Tab.0.right" timestamp="1603026403541">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602698496351" />
-    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602935073294" />
-    <state x="272" y="57" key="SettingsEditor" timestamp="1602480384436">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="248" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1603026403541" />
+    <state x="272" y="60" key="SettingsEditor" timestamp="1602940320189">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602480384436" />
+    <state x="272" y="60" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1602940320189" />
     <state x="457" y="44" width="621" height="735" key="find.popup" timestamp="1602694636177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

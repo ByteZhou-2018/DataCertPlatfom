@@ -1,4 +1,4 @@
-package Hash
+package utils
 
 import (
 	"crypto/md5"

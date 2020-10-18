@@ -2,12 +2,12 @@ package controllers
 
 import (
 	"DataCertPlatfom/models"
+	"DataCertPlatfom/utils"
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
 	"github.com/astaxie/beego"
 	"io"
-	"os"
 	"strings"
 	"time"
 )
@@ -54,13 +54,13 @@ func (f *FilesController) Post() {
 	hashInterface := md5.New()
 	//创建上传目录
 	dirName := "static/upload"
-	if _, err = os.Open(dirName);err!= nil{//先打开,没有则先创建
-		if err = os.Mkdir(dirName, os.ModePerm);err != nil {
-			f.Data["Error"] = err.Error()
-			f.TplName = "404.html"
-			return
-		}
+	err = utils.OpenDir(dirName)
+	if err != nil{
+		f.Data["Error"] = err.Error()
+		f.TplName = "404.html"
+		return
 	}
+
 
 
 	//判断每个文件的类型和大小。。
@@ -79,25 +79,29 @@ func (f *FilesController) Post() {
 		//
 		file, err := files[i].Open() //打开获取到的文件
 		defer  file.Close()
-
-
+		//保存文件
 		savePath := "static/upload" + "/" + files[i].Filename
-		savefile, err := os.OpenFile(savePath, os.O_CREATE|os.O_RDWR, os.ModePerm)
-		if err != nil {
-			f.Ctx.WriteString("创建文件失败")
-			fmt.Println(err.Error())
-			return
-		}
-//		文件hash计算
-			defer hashInterface.Reset()
+		_,err = utils.SaveFile(savePath,file)
 
-		if _, err = io.Copy(savefile, file);err != nil {
+		if err != nil {
 			f.Data["Error"] = err.Error()
 			f.TplName = "404.html"
 			return
 		}
+//		文件hash计算  完成后reset hashInterface
 
-		if _,err = io.Copy(hashInterface,savefile);err != nil{
+			defer hashInterface.Reset()
+
+		//++++++++++++++++文件再次打开
+		fileThis,err := files[i].Open()
+		if err != nil {
+			fmt.Println(err.Error())
+			f.Ctx.WriteString("再次打开文件错误")
+			return
+		}
+		defer fileThis.Close()
+		//把再次打开的文件内容写入 到 hashInterface中
+		if _,err = io.Copy(hashInterface,fileThis);err != nil{
 			f.Data["Error"] = err.Error()
 			f.TplName = "404.html"
 			fmt.Println(err.Error())
@@ -116,12 +120,17 @@ func (f *FilesController) Post() {
 			FileTitle: title,
 			CertTime:  time.Now().String(),
 		}
+
+
+	//  把每个文件的信息添加到数据库中
 		_,err = thisFileInfo.AddFiles()
 		if err != nil{
 			fmt.Println(err.Error())
 			f.Ctx.WriteString("电子数据认证失败,请休息一会儿再试!")
 			return
 		}
+		fmt.Println(thisFileInfo.FileName)
+		fmt.Println(thisFileInfo.FileCert)
 	}
 	records,err := models.QueryRecordsByUserId(userId)
 	if err != nil{

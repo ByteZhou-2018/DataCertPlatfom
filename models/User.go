@@ -1,8 +1,11 @@
 package models
 
-import "DataCertPlatfom/db_mysql"
+import (
+	"DataCertPlatfom/db_mysql"
+	"DataCertPlatfom/utils"
+)
 import "fmt"
-import "DataCertPlatfom/Hash"
+
 type User struct {
 	//Id int `form:"id"`
 	Name string`form:"username"`
@@ -15,7 +18,7 @@ type User struct {
 func (u User)AddUser()(int64,error){
 
 	//1.密码脱敏 哈希包 md5加密再存入数据库
-	u.Password = Hash.HASH(u.Password,"md5",false)
+	u.Password = utils.HASH(u.Password,"md5",false)
 	//2.将用户数据存入数据库
 	result,err := db_mysql.Db.Exec("insert into user_info(username,sex,phone,password,email)" +
 		"value (?,?,?,?,?)",u.Name,u.Sex,u.Phone,u.Password,u.Email)
@@ -31,7 +34,7 @@ func (u User)AddUser()(int64,error){
 }
 //用户登录方法  登录是否成功取决于返回的bool返回的类型
 func (u User)QueryUser() (*User,error) {
-	u.Password = Hash.HASH(u.Password,"md5",false)
+	u.Password = utils.HASH(u.Password,"md5",false)
 	//查询数据
 	row := db_mysql.Db.QueryRow("select username,phone from user_info where username = ? and password = ?",
 		u.Name, u.Password)
