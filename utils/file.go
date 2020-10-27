@@ -23,10 +23,4 @@ func  SaveFile(filename string,file io.Reader)(int64,error)  {
 	length,err := io.Copy(savefile,file)
 	return length,err
 }
-//func OpenFile(filePath string)(io.Reader,error) {
-//	file,err :=os.OpenFile(filePath,os.O_CREATE|os.O_RDWR,os.ModePerm)
-//	if err != nil{
-//		return nil,err
-//	}
-//	return file,nil
-//}
+

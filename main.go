@@ -9,6 +9,7 @@ import (
 func main() {
 	db_mysql.OpenDB()
 	defer db_mysql.Db.Close()
+	//
 	//静态资源文件映射
 	//				url 出现 img时	去path路径里 ./static/xxx 路径去找相应的文件
 	beego.SetStaticPath("../static/img", "./static/img")
